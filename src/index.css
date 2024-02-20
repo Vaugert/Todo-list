@@ -1,0 +1,162 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1e1a36; /* Deep blue-purple */
+  color: white;
+  padding: 16px 0;
+  text-align: center;
+  z-index: 1000;
+}
+
+/* Body background */
+body,
+html {
+  margin: 0;
+  height: 100%;
+  background: linear-gradient(to right, #e6e9f0 0%, #eef1f5 100%);
+  color: #333333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* App container, provides space for the fixed header */
+.App {
+  padding-top: 200px; /* Adjust based on the height of your header */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 70px); /* Subtract the header height */
+}
+
+/* Main content styles */
+.main {
+  width: 100%;
+  max-width: 700px; /* Control the max width of your main content */
+  margin: 20px auto;
+}
+
+/* CreateTask container */
+.create-task {
+  width: 100%;
+  margin: 0 auto; /* Ensures the container is centered */
+  text-align: center; /* Centers the content */
+}
+
+/* TaskButton styles */
+.task-button {
+  background-color: #4ab8f8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 15px; /* Space between button and form */
+}
+
+.task-button:hover {
+  background-color: #2176ae;
+}
+
+/* TaskForm styles */
+.task-form {
+  border: 2px solid #5d54a4;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.task-form input,
+.task-form textarea {
+  width: calc(100% - 20px); /* Adjust width to account for padding */
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#taskPriority {
+  background-color: white;
+  color: #333;
+}
+
+.task-form label {
+  display: block;
+  margin-top: 20px;
+}
+
+.task-form .submit-button {
+  background-color: #4ab8f8;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+.task-form .submit-button:hover {
+  background-color: #2176ae;
+}
+
+.task-board {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Creates a responsive grid layout */
+  gap: 20px; /* Space between individual tasks */
+  padding: 20px; /* Padding around the entire board */
+}
+
+.task-item {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: left; /* Aligns content to the left */
+}
+
+.task-item h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.task-item .priority {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: #f3f3f3;
+  color: #333;
+  text-transform: capitalize;
+  margin-top: 10px; /* Spacing from the description */
+}
+
+.task-item .priority {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: white;
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+
+/* Low priority - Green */
+.task-item .priority.low {
+  background-color: #90ee90;
+}
+
+/* Medium priority - Yellow */
+.task-item .priority.medium {
+  background-color: #d1b304;
+}
+
+/* High priority - Red */
+.task-item .priority.high {
+  background-color: #ff6347;
+}
